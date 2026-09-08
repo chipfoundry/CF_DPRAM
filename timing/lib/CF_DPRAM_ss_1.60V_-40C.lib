@@ -1,0 +1,317 @@
+
+library (CF_DPRAM_ss_1.60V_-40C) {
+
+  delay_model : table_lookup ;
+  capacitive_load_unit (1,pf) ;
+  pulling_resistance_unit :  "1kohm" ;
+  time_unit : "1ns" ;
+  voltage_unit : "1V" ;
+  current_unit : "1mA" ;
+  leakage_power_unit : "1nW" ;
+  default_fanout_load : 0.0 ;
+  default_inout_pin_cap : 0.0 ;
+  default_input_pin_cap : 0.0 ;
+  default_output_pin_cap : 0.0 ;
+  input_threshold_pct_rise : 50.0 ;
+  input_threshold_pct_fall : 50.0 ;
+  output_threshold_pct_rise : 50.0 ;
+  output_threshold_pct_fall : 50.0 ;
+  slew_lower_threshold_pct_fall : 20.0 ;
+  slew_lower_threshold_pct_rise : 20.0 ;
+  slew_upper_threshold_pct_fall : 80.0 ;
+  slew_upper_threshold_pct_rise : 80.0 ;
+
+  revision : 1.000000 ;
+  bus_naming_style : "%s[%d]" ;
+  simulation : true ;
+  nom_process : 1.0 ;
+  nom_temperature : -40 ;
+  nom_voltage : 1.6 ;
+  in_place_swap_mode : match_footprint ;
+  default_max_transition : 1.0 ;
+
+  operating_conditions("max") {
+    process     : 1 ;
+    temperature : -40 ;
+    voltage     : 1.6 ;
+    tree_type   : balanced_tree ; 
+  }
+
+  default_operating_conditions : "max" ;
+  default_leakage_power_density : 0.00 ;
+  slew_derate_from_library : 1.00 ;
+  default_cell_leakage_power : 0.00 ;
+  library_features (report_delay_calculation) ;
+  voltage_map (vpwr, 1.6) ;
+  voltage_map (vgnd, 0.0) ;
+  voltage_map (vpb, 1.6) ;
+  voltage_map (vnb, 0.0) ;
+  voltage_map (vpwrka, 1.6) ;
+
+  type (bus_03) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 3;
+    bit_from  : 2;
+    bit_to    : 0;
+    downto    : true;
+  }
+
+  type (bus_16) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 16;
+    bit_from  : 15;
+    bit_to    : 0;
+    downto    : true;
+  }
+
+  lu_table_template (delay_template1x7) {
+  variable_1 : total_output_net_capacitance ;
+  index_1 ("1,2,3,4,5,6,7") ;
+  }
+  lu_table_template (delay_template1x5) {
+  variable_1 : total_output_net_capacitance ;
+  index_1 ("1,2,3,4,5") ;
+
+  }
+
+  cell (CF_DPRAM) {
+    interface_timing : true ;
+    area : 3100 ;
+	cell_leakage_power : 2.131;
+      pg_pin ( vnb ) {
+        voltage_name : vnb ;
+        pg_type : primary_ground ;
+      }; 
+    pin ( SLP ) {
+    direction : input ;
+       related_power_pin : vpwr ; 
+       related_ground_pin : vgnd ; 
+        capacitance : 0.017 ; 
+        max_transition : 1.5 ; 
+    }
+    bus ( DI ) {
+      bus_type : bus_16 ;
+      direction : input ;
+      pin ( DI[15:0] ) {
+       related_power_pin : vpwr ; 
+       related_ground_pin : vgnd ; 
+        capacitance : 0.011 ; 
+        max_transition : 1.5 ; 
+        timing() {
+          related_pin : " WH WL  " ;
+          timing_type : setup_falling ;
+          rise_constraint (scalar) {
+            values("5.0") ; 
+          } ; 
+          fall_constraint (scalar) { 
+            values("5.0") ; 
+          } ; 
+        }
+        timing() {
+          related_pin : " WH WL  " ;
+          timing_type : hold_falling ;
+          rise_constraint (scalar) {
+            values("0.5") ; 
+          } ; 
+          fall_constraint (scalar) { 
+            values("0.5") ; 
+          } ; 
+        }
+      }
+    }
+    bus ( DORO ) {
+      bus_type : bus_16 ;
+      pin ( DORO[15:0] ) {
+        related_power_pin : vpwr ; 
+        related_ground_pin : vgnd ;
+        direction : output ;
+        max_capacitance : 0.150 ; 
+        timing() {
+          related_pin : " ARO[0] ARO[1] ARO[2]  " ;
+          timing_sense : non_unate ;
+          cell_rise (delay_template1x7) {
+            index_1 ("0.01,0.02,0.03,0.04,0.05,0.15");
+            values ("1.86,1.89,1.92,1.93,1.95,1.97");
+         }
+          cell_fall (delay_template1x7) {
+            index_1 ("0.01,0.02,0.03,0.04,0.05,0.15");
+            values ("1.71,1.75,1.78,1.82,1.85,1.88");
+         }
+          rise_transition (scalar) { 
+            values("0.75") ; 
+          } ; 
+          fall_transition (scalar) { 
+            values("0.75") ; 
+          } ; 
+        }
+      }
+    }
+    pin ( ENR ) {
+    direction : input ;
+       related_power_pin : vpwr ; 
+       related_ground_pin : vgnd ; 
+        capacitance : 0.007 ; 
+        max_transition : 1.5 ; 
+    }
+      pg_pin ( vpb ) {
+        voltage_name : vpb ;
+        pg_type : primary_power ;
+      }; 
+    bus ( ARW ) {
+      bus_type : bus_03 ;
+      direction : input ;
+      pin ( ARW[2:0] ) {
+       related_power_pin : vpwr ; 
+       related_ground_pin : vgnd ; 
+        capacitance : 0.007 ; 
+        max_transition : 1.5 ; 
+        timing() {
+          related_pin : " WH WL  " ;
+          timing_type : setup_rising ;
+          rise_constraint (scalar) {
+            values("1.0") ; 
+          } ; 
+          fall_constraint (scalar) { 
+            values("1.0") ; 
+          } ; 
+        }
+        timing() {
+          related_pin : " WH WL  " ;
+          timing_type : hold_falling ;
+          rise_constraint (scalar) {
+            values("0.5") ; 
+          } ; 
+          fall_constraint (scalar) { 
+            values("0.5") ; 
+          } ; 
+        }
+      }
+    }
+      pg_pin ( vpwrka ) {
+        voltage_name : vpwrka ;
+        pg_type : primary_power ;
+      }; 
+    pin ( WL ) {
+    direction : input ;
+       related_power_pin : vpwr ; 
+       related_ground_pin : vgnd ; 
+        capacitance : 0.007 ; 
+        max_transition : 1.5 ; 
+    }
+      pg_pin ( vgnd ) {
+        voltage_name : vgnd ;
+        pg_type : primary_ground ;
+      }; 
+    pin ( TME ) {
+    direction : input ;
+       related_power_pin : vpwr ; 
+       related_ground_pin : vgnd ; 
+        capacitance : 0.007 ; 
+        max_transition : 1.5 ; 
+    }
+    bus ( ARO ) {
+      bus_type : bus_03 ;
+      direction : input ;
+      pin ( ARO[2:0] ) {
+       related_power_pin : vpwr ; 
+       related_ground_pin : vgnd ; 
+        capacitance : 0.009 ; 
+        max_transition : 1.5 ; 
+      }
+    }
+    pin ( WH ) {
+    direction : input ;
+       related_power_pin : vpwr ; 
+       related_ground_pin : vgnd ; 
+        capacitance : 0.007 ; 
+        max_transition : 1.5 ; 
+    }
+    bus ( DORW ) {
+      bus_type : bus_16 ;
+      pin ( DORW[15:0] ) {
+        related_power_pin : vpwr ; 
+        related_ground_pin : vgnd ;
+        direction : output ;
+        max_capacitance : 0.150 ; 
+        timing() {
+          related_pin : " ARW[0] ARW[1] ARW[2]  " ;
+          timing_sense : non_unate ;
+          cell_rise (delay_template1x5) {
+            index_1 ("0.05,0.1,0.15,0.2");
+            values ("4.92,5.98,7.04,8.03");
+         }
+          cell_fall (delay_template1x5) {
+            index_1 ("0.05,0.1,0.15,0.2");
+            values ("4.58,5.32,5.93,6.21");
+         }
+          rise_transition (scalar) { 
+            values("0.75") ; 
+          } ; 
+          fall_transition (scalar) { 
+            values("0.75") ; 
+          } ; 
+        }
+        timing() {
+          related_pin : " ENR  " ;
+          timing_sense : non_unate ;
+          cell_rise (delay_template1x5) {
+            index_1 ("0.05,0.1,0.15,0.2");
+            values ("3.92,4.98,6.04,7.03");
+         }
+          cell_fall (delay_template1x5) {
+            index_1 ("0.05,0.1,0.15,0.2");
+            values ("3.58,4.32,4.93,5.21");
+         }
+          rise_transition (scalar) { 
+            values("0.75") ; 
+          } ; 
+          fall_transition (scalar) { 
+            values("0.75") ; 
+          } ; 
+        }
+        timing() {
+          related_pin : " TME " ;
+          timing_sense : non_unate ;
+          cell_rise (delay_template1x5) {
+            index_1 ("0.05,0.1,0.15,0.2");
+            values ("4.92,5.98,7.04,8.03");
+         }
+          cell_fall (delay_template1x5) {
+            index_1 ("0.05,0.1,0.15,0.2");
+            values ("4.58,5.32,5.93,6.21");
+         }
+          rise_transition (scalar) { 
+            values("0.75") ; 
+          } ; 
+          fall_transition (scalar) { 
+            values("0.75") ; 
+          } ; 
+        }
+        timing() {
+          related_pin : " ARO[0] ARO[1] ARO[2]  " ;
+          timing_sense : non_unate ;
+          cell_rise (delay_template1x5) {
+            index_1 ("0.05,0.1,0.15,0.2");
+            values ("5.92,6.98,8.04,9.03");
+         }
+          cell_fall (delay_template1x5) {
+            index_1 ("0.05,0.1,0.15,0.2");
+            values ("5.58,6.32,6.93,7.21");
+         }
+          rise_transition (scalar) { 
+            values("0.75") ; 
+          } ; 
+          fall_transition (scalar) { 
+            values("0.75") ; 
+          } ; 
+        }
+      }
+    }
+      pg_pin ( vpwr ) {
+        voltage_name : vpwr ;
+        pg_type : primary_power ;
+      }; 
+  }
+}

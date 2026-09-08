@@ -1,0 +1,24 @@
+info:
+  name: CF_DPRAM
+  description: Dual-Port RAM (CF_DPRAM) is a ChipFoundry
+    hard-macro blackbox on SkyWater 130 nm.
+  repo: https://github.com/chipfoundry/CF_DPRAM
+  owner: ChipFoundry
+  license: proprietary
+  author: ChipFoundry
+  email: support@chipfoundry.io
+  version: 0.2.0
+  date: 9-8-2026
+  category: digital
+  tags:
+  - CF_DPRAM
+  bus: n/a
+  type: hard
+  maturity: Production
+  width: '127.295'
+  height: '62.395'
+  technology: sky130
+  digital_supply_voltage: n/a
+  analog_supply_voltage: n/a
+  clock_freq_mhz: n/a
+  cell_count: '2'
