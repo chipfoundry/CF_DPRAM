@@ -10,9 +10,10 @@ box 0 0 19459 6479
 rect 4829 0 4887 3040
 rect 3888 9433 3940 12479
 rect 4746 0 4798 3044
-rect 0 7906 3051 7964
-rect 0 8516 3051 8574
-rect 0 8802 3051 8860
+rect 0 7896 3057 7975
+rect 0 8506 3057 8585
+rect 0 8792 3057 8871
+rect 0 8792 96 12479
 rect 4022 9433 4080 12479
 rect 4536 9432 4594 12479
 rect 7004 0 7050 3035
@@ -22,8 +23,8 @@ rect 17900 0 17946 3035
 rect 17020 0 17066 3035
 rect 16028 0 16074 3035
 rect 15148 0 15194 3035
-rect 20271 9436 20299 9464
 rect 20273 9440 20301 12479
+rect 20275 9440 20295 9460
 rect 18513 9440 18541 12479
 rect 17633 9440 17661 12479
 rect 16641 9440 16669 12479
@@ -78,7 +79,7 @@ rect 3239 2648 22286 3126
 rect 4290 3512 4330 3552
 rect 12743 2676 12783 2716
 << metal3 >>
-rect 4244 3495 4376 3568
+rect 4262 3482 4358 3582
 rect 246 9579 25213 10199
 rect 3239 2648 22286 2744
 rect 246 10539 25213 11159
@@ -495,154 +496,146 @@ rlabel metal1 s 3888 9433 3940 12479 4 WH
 port 3 nsew
 rlabel metal1 s 4746 0 4798 3044 4 SLP
 port 4 nsew
-rlabel metal1 s 0 7906 3051 7964 4 ARW[2]
+rlabel metal1 s 0 7896 3057 7975 4 ARW[2]
 port 5 nsew
-rlabel metal1 s 0 8516 3051 8574 4 ARW[1]
+rlabel metal1 s 0 8506 3057 8585 4 ARW[1]
 port 6 nsew
-rlabel metal1 s 0 8802 3051 8860 4 ARW[0]
+rlabel metal1 s 0 8792 3057 8871 4 ARW[0]
 port 7 nsew
-rlabel metal1 s 4022 9433 4080 12479 4 WL
+rlabel metal1 s 0 8792 96 12479 4 ARW[0]
 port 8 nsew
-rlabel metal1 s 4536 9432 4594 12479 4 ENR
+rlabel metal1 s 4022 9433 4080 12479 4 WL
 port 9 nsew
-rlabel metal1 s 7004 0 7050 3035 4 DORW[1]
+rlabel metal1 s 4536 9432 4594 12479 4 ENR
 port 10 nsew
-rlabel metal1 s 19660 0 19706 3035 4 DORW[15]
+rlabel metal1 s 7004 0 7050 3035 4 DORW[1]
 port 11 nsew
-rlabel metal1 s 18780 0 18826 3035 4 DORW[14]
+rlabel metal1 s 19660 0 19706 3035 4 DORW[15]
 port 12 nsew
-rlabel metal1 s 17900 0 17946 3035 4 DORW[13]
+rlabel metal1 s 18780 0 18826 3035 4 DORW[14]
 port 13 nsew
-rlabel metal1 s 17020 0 17066 3035 4 DORW[12]
+rlabel metal1 s 17900 0 17946 3035 4 DORW[13]
 port 14 nsew
-rlabel metal1 s 16028 0 16074 3035 4 DORW[11]
+rlabel metal1 s 17020 0 17066 3035 4 DORW[12]
 port 15 nsew
-rlabel metal1 s 15148 0 15194 3035 4 DORW[10]
+rlabel metal1 s 16028 0 16074 3035 4 DORW[11]
 port 16 nsew
-rlabel metal1 s 20271 9436 20299 9464 4 DI[15]
+rlabel metal1 s 15148 0 15194 3035 4 DORW[10]
 port 17 nsew
 rlabel metal1 s 20273 9440 20301 12479 4 DI[15]
 port 18 nsew
-rlabel metal1 s 18513 9440 18541 12479 4 DI[13]
+rlabel metal1 s 20275 9440 20295 9460 4 DI[15]
 port 19 nsew
-rlabel metal1 s 17633 9440 17661 12479 4 DI[12]
+rlabel metal1 s 18513 9440 18541 12479 4 DI[13]
 port 20 nsew
-rlabel metal1 s 16641 9440 16669 12479 4 DI[11]
+rlabel metal1 s 17633 9440 17661 12479 4 DI[12]
 port 21 nsew
-rlabel metal1 s 15761 9440 15789 12479 4 DI[10]
+rlabel metal1 s 16641 9440 16669 12479 4 DI[11]
 port 22 nsew
-rlabel metal1 s 14881 9440 14909 12479 4 DI[9]
+rlabel metal1 s 15761 9440 15789 12479 4 DI[10]
 port 23 nsew
-rlabel metal1 s 14001 9440 14029 12479 4 DI[8]
+rlabel metal1 s 14881 9440 14909 12479 4 DI[9]
 port 24 nsew
-rlabel metal1 s 13009 9440 13037 12479 4 DI[7]
+rlabel metal1 s 14001 9440 14029 12479 4 DI[8]
 port 25 nsew
-rlabel metal1 s 12129 9440 12157 12479 4 DI[6]
+rlabel metal1 s 13009 9440 13037 12479 4 DI[7]
 port 26 nsew
-rlabel metal1 s 11249 9440 11277 12479 4 DI[5]
+rlabel metal1 s 12129 9440 12157 12479 4 DI[6]
 port 27 nsew
-rlabel metal1 s 10369 9440 10397 12479 4 DI[4]
+rlabel metal1 s 11249 9440 11277 12479 4 DI[5]
 port 28 nsew
-rlabel metal1 s 6737 9432 6765 12479 4 DI[0]
+rlabel metal1 s 10369 9440 10397 12479 4 DI[4]
 port 29 nsew
-rlabel metal1 s 7617 9440 7645 12479 4 DI[1]
+rlabel metal1 s 6737 9432 6765 12479 4 DI[0]
 port 30 nsew
-rlabel metal1 s 8497 9440 8525 12479 4 DI[2]
+rlabel metal1 s 7617 9440 7645 12479 4 DI[1]
 port 31 nsew
-rlabel metal1 s 9377 9440 9405 12479 4 DI[3]
+rlabel metal1 s 8497 9440 8525 12479 4 DI[2]
 port 32 nsew
-rlabel metal1 s 19393 9440 19421 12479 4 DI[14]
+rlabel metal1 s 9377 9440 9405 12479 4 DI[3]
 port 33 nsew
-rlabel metal1 s 6449 0 6495 3035 4 DORO[0]
+rlabel metal1 s 19393 9440 19421 12479 4 DI[14]
 port 34 nsew
-rlabel metal1 s 7331 0 7377 3035 4 DORO[1]
+rlabel metal1 s 6449 0 6495 3035 4 DORO[0]
 port 35 nsew
-rlabel metal1 s 8213 0 8259 3035 4 DORO[2]
+rlabel metal1 s 7331 0 7377 3035 4 DORO[1]
 port 36 nsew
-rlabel metal1 s 9095 0 9141 3035 4 DORO[3]
+rlabel metal1 s 8213 0 8259 3035 4 DORO[2]
 port 37 nsew
-rlabel metal1 s 10083 0 10129 3035 4 DORO[4]
+rlabel metal1 s 9095 0 9141 3035 4 DORO[3]
 port 38 nsew
-rlabel metal1 s 10965 0 11011 3035 4 DORO[5]
+rlabel metal1 s 10083 0 10129 3035 4 DORO[4]
 port 39 nsew
-rlabel metal1 s 11847 0 11893 3035 4 DORO[6]
+rlabel metal1 s 10965 0 11011 3035 4 DORO[5]
 port 40 nsew
-rlabel metal1 s 12729 0 12775 3035 4 DORO[7]
+rlabel metal1 s 11847 0 11893 3035 4 DORO[6]
 port 41 nsew
-rlabel metal1 s 13717 0 13763 3035 4 DORO[8]
+rlabel metal1 s 12729 0 12775 3035 4 DORO[7]
 port 42 nsew
-rlabel metal1 s 14599 0 14645 3035 4 DORO[9]
+rlabel metal1 s 13717 0 13763 3035 4 DORO[8]
 port 43 nsew
-rlabel metal1 s 15481 0 15527 3035 4 DORO[10]
+rlabel metal1 s 14599 0 14645 3035 4 DORO[9]
 port 44 nsew
-rlabel metal1 s 16363 0 16409 3035 4 DORO[11]
+rlabel metal1 s 15481 0 15527 3035 4 DORO[10]
 port 45 nsew
-rlabel metal1 s 17351 0 17397 3035 4 DORO[12]
+rlabel metal1 s 16363 0 16409 3035 4 DORO[11]
 port 46 nsew
-rlabel metal1 s 18233 0 18279 3035 4 DORO[13]
+rlabel metal1 s 17351 0 17397 3035 4 DORO[12]
 port 47 nsew
-rlabel metal1 s 19115 0 19161 3035 4 DORO[14]
+rlabel metal1 s 18233 0 18279 3035 4 DORO[13]
 port 48 nsew
-rlabel metal1 s 19997 0 20043 3035 4 DORO[15]
+rlabel metal1 s 19115 0 19161 3035 4 DORO[14]
 port 49 nsew
-rlabel metal1 s 6124 0 6170 3035 4 DORW[0]
+rlabel metal1 s 19997 0 20043 3035 4 DORO[15]
 port 50 nsew
-rlabel metal1 s 7884 0 7930 3035 4 DORW[2]
+rlabel metal1 s 6124 0 6170 3035 4 DORW[0]
 port 51 nsew
-rlabel metal1 s 8764 0 8810 3035 4 DORW[3]
+rlabel metal1 s 7884 0 7930 3035 4 DORW[2]
 port 52 nsew
-rlabel metal1 s 9756 0 9802 3035 4 DORW[4]
+rlabel metal1 s 8764 0 8810 3035 4 DORW[3]
 port 53 nsew
-rlabel metal1 s 10636 0 10682 3035 4 DORW[5]
+rlabel metal1 s 9756 0 9802 3035 4 DORW[4]
 port 54 nsew
-rlabel metal1 s 11516 0 11562 3035 4 DORW[6]
+rlabel metal1 s 10636 0 10682 3035 4 DORW[5]
 port 55 nsew
-rlabel metal1 s 21874 9441 21920 12479 4 ARO[2]
+rlabel metal1 s 11516 0 11562 3035 4 DORW[6]
 port 56 nsew
-rlabel metal1 s 21789 9441 21835 12479 4 ARO[1]
+rlabel metal1 s 21874 9441 21920 12479 4 ARO[2]
 port 57 nsew
-rlabel metal1 s 21704 9441 21750 12479 4 ARO[0]
+rlabel metal1 s 21789 9441 21835 12479 4 ARO[1]
 port 58 nsew
-rlabel metal2 s 3240 3495 3335 3568 4 vgnd
+rlabel metal1 s 21704 9441 21750 12479 4 ARO[0]
 port 59 nsew
-rlabel metal2 s 3240 3495 4358 3568 4 vgnd
+rlabel metal3 s 4262 3482 4358 3582 4 vgnd
 port 60 nsew
-rlabel metal3 s 4244 3495 4376 3568 4 vgnd
-port 61 nsew
 rlabel metal3 s 246 9579 25213 10199 4 vgnd
-port 62 nsew
+port 61 nsew
 rlabel metal4 s 4000 0 4620 12479 4 vgnd
-port 63 nsew
+port 62 nsew
 rlabel metal4 s 10000 0 10620 12479 4 vgnd
-port 64 nsew
+port 63 nsew
 rlabel metal4 s 16000 0 16620 12479 4 vgnd
-port 65 nsew
+port 64 nsew
 rlabel metal4 s 22000 0 22620 12479 4 vgnd
-port 66 nsew
-rlabel metal2 s 3239 3053 3334 3126 4 vpwr
-port 67 nsew
-rlabel metal2 s 22191 3048 22286 3121 4 vpwr
-port 68 nsew
-rlabel metal2 s 3239 2648 22286 3126 4 vpwr
-port 69 nsew
+port 65 nsew
 rlabel metal3 s 3239 2648 22286 2744 4 vpwr
-port 70 nsew
+port 66 nsew
 rlabel metal3 s 246 10539 25213 11159 4 vpwr
-port 71 nsew
+port 67 nsew
 rlabel metal4 s 1000 0 1620 12479 4 vpwr
-port 72 nsew
+port 68 nsew
 rlabel metal4 s 7000 0 7620 12479 4 vpwr
-port 73 nsew
+port 69 nsew
 rlabel metal4 s 13000 0 13620 12479 4 vpwr
-port 74 nsew
+port 70 nsew
 rlabel metal4 s 19000 0 19620 12479 4 vpwr
-port 75 nsew
+port 71 nsew
 rlabel metal1 s 12396 0 12442 3035 4 DORW[7]
-port 76 nsew
+port 72 nsew
 rlabel metal1 s 13388 0 13434 3035 4 DORW[8]
-port 77 nsew
+port 73 nsew
 rlabel metal1 s 14268 0 14314 3035 4 DORW[9]
-port 78 nsew
+port 74 nsew
 << properties >>
 string FIXED_BBOX 0 0 25459 12479
 << end >>

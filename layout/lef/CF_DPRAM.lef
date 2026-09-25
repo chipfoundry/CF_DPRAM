@@ -44,7 +44,7 @@ MACRO CF_DPRAM
     USE SIGNAL ;
     PORT
       LAYER met1 ;
-        RECT 0 39.53 15.255 39.82 ;
+        RECT 0 39.48 15.285 39.875 ;
     END
   END ARW[2]
   PIN ARW[1]
@@ -52,7 +52,7 @@ MACRO CF_DPRAM
     USE SIGNAL ;
     PORT
       LAYER met1 ;
-        RECT 0 42.58 15.255 42.87 ;
+        RECT 0 42.53 15.285 42.925 ;
     END
   END ARW[1]
   PIN ARW[0]
@@ -60,7 +60,8 @@ MACRO CF_DPRAM
     USE SIGNAL ;
     PORT
       LAYER met1 ;
-        RECT 0 44.01 15.255 44.3 ;
+        RECT 0 43.96 15.285 44.355 ;
+        RECT 0 43.96 0.48 62.395 ;
     END
   END ARW[0]
   PIN WL
@@ -140,8 +141,8 @@ MACRO CF_DPRAM
     USE SIGNAL ;
     PORT
       LAYER met1 ;
-        RECT 101.355 47.18 101.495 47.32 ;
         RECT 101.365 47.2 101.505 62.395 ;
+        RECT 101.375 47.2 101.475 47.3 ;
     END
   END DI[15]
   PIN DI[13]
@@ -472,7 +473,7 @@ MACRO CF_DPRAM
         RECT 16.2 17.475 16.675 17.84 ;
         RECT 16.2 17.475 21.79 17.84 ;
       LAYER met3 ;
-        RECT 21.22 17.475 21.88 17.84 ;
+        RECT 21.31 17.41 21.79 17.91 ;
         RECT 1.23 47.895 126.065 50.995 ;
       LAYER met4 ;
         RECT 20 0 23.1 62.395 ;
@@ -527,10 +528,13 @@ MACRO CF_DPRAM
     LAYER li1 ;
       RECT 0 0 127.295 62.395 ;
     LAYER met1 ;
-      RECT 0 0 15 39.53 ;
-      RECT 0 39.82 15 42.58 ;
-      RECT 0 42.87 15 44.01 ;
-      RECT 0 44.3 15 62.395 ;
+      RECT 0 0 0.48 39.48 ;
+      RECT 0 39.875 0.48 42.53 ;
+      RECT 0 42.925 0.48 43.96 ;
+      RECT 0.48 0 15 39.48 ;
+      RECT 0.48 39.875 15 42.53 ;
+      RECT 0.48 42.925 15 43.96 ;
+      RECT 0.48 44.355 15 62.395 ;
       RECT 112.295 0 127.295 62.395 ;
       RECT 15 0 23.73 15 ;
       RECT 23.99 0 24.145 15 ;
